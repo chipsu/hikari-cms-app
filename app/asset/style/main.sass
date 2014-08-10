@@ -1,0 +1,45 @@
+@import '../../../lib/hikari-reset/bourbon/bourbon'
+@import '../../../lib/hikari-reset/neat.sass'
+@import 'config.sass'
+@import '../../../lib/hikari-reset/neat/neat'
+@import '../../../lib/hikari-reset/reset'
+@import '../../../lib/hikari-reset/main'
+@import 'font.sass'
+@import '../../../lib/hikari-reset/awesome/scss/font-awesome.scss'
+
+body
+    color: $primaryColor
+    background-color: $primaryBackgroundColor
+    font-family: 'Roboto', sans-serif
+    > header,
+    > footer
+        color: $tertiaryColor
+        background-color: $tertiaryBackgroundColor
+        box-shadow: 0 0 5px 2px rgba($tertiaryBackgroundColor, 0.65)
+        z-index: 1
+        nav > ul ul
+            z-index: 0
+            box-shadow: 0 0 5px 2px rgba($tertiaryBackgroundColor, 0.65)
+        nav > ul li > a
+            color: $tertiaryColor
+            background-color: $tertiaryBackgroundColor
+            &:hover
+                color: $secondaryColor
+                background-color: $secondaryBackgroundColor
+    > footer
+        position: fixed
+        bottom: 0
+        width: 100%
+
+//[data-editor]
+    border-color: transparent
+    @include transition-property(border-color)
+    @include transition-duration(.5s)
+    @include transition-timing-function(ease-in)
+    @include transition-delay(0)
+
+//[data-editor=wysiwyg]
+
+[contenteditable]
+    outline: 1px dotted #33d
+

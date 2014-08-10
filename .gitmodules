@@ -1,0 +1,9 @@
+[submodule "lib/hikari"]
+	path = lib/hikari
+	url = git@leafa.metrica.se:www/hikari-lib.git
+[submodule "lib/hikari-reset"]
+	path = lib/hikari-reset
+	url = git@leafa.metrica.se:www/hikari-reset.git
+[submodule "lib/hikari-js"]
+	path = lib/hikari-js
+	url = git@bitbucket.org:metrica/hikari-js.git

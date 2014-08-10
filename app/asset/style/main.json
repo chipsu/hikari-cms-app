@@ -1,0 +1,9 @@
+{
+    "mode": "compile",
+    "source": "main.sass",
+    "dependencies": {
+        "../image/*.{png,jpg}": "image",
+        "../font/*.{eot,woff,ttf,svg}": "font",
+        "../../../lib/hikari-reset/awesome.json": "font"
+    }
+}
