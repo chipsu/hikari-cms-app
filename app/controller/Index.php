@@ -7,6 +7,6 @@ use hikari\cms\controller\Base as ControllerBase;
 class Index extends ControllerBase {
 
     function index() {
-        echo 'its alive!';
+        return ['title' => 'hello!', 'content' => []];
     }
 }

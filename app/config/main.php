@@ -29,6 +29,10 @@ return [
             ],
             'properties' => [
                 'extensions' => ['phtml'],
+                'paths' => [
+                    __DIR__ . '/..',
+                    __DIR__ . '/../../lib/hikari-cms',
+                ],
             ],
         ],
         'asset' => [
