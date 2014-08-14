@@ -7,3 +7,6 @@
 [submodule "lib/hikari-js"]
 	path = lib/hikari-js
 	url = git@bitbucket.org:metrica/hikari-js.git
+[submodule "lib/hikari-cms"]
+	path = lib/hikari-cms
+	url = git@leafa.metrica.se:www/hikari-cms.git
