@@ -2,11 +2,12 @@
 
 namespace app\controller;
 
-use hikari\cms\controller\Base as ControllerBase;
-
-class Index extends ControllerBase {
+class Index extends \hikari\cms\controller\Index {
 
     function index() {
-        return ['title' => 'hello!', 'content' => []];
+        $page = \hikari\cms\model\Page::find([
+            'name' => $this->request->request('page', 'index'),
+        ], ['hydrator' => true]);
+        return ['title' => 'hello!', 'page' => $page];
     }
 }
