@@ -16,6 +16,17 @@ return [
                 'register' => true,
             ],
         ],
+        // i think this should be part of the html class? or at least autoload without having to specify it here?
+        'menu' => [
+            'class' => 'hikari\html\Menu',
+            'options' => [
+                'shared' => true,
+                'register' => true,
+                'components' => [
+                    'html',
+                ],
+            ],
+        ],
         'view' => [
             'class' => 'hikari\view\View',
             'options' => [
@@ -25,6 +36,7 @@ return [
                     'html',
                     'router',
                     //'translator',
+                    'menu',
                 ],
             ],
             'properties' => [
@@ -60,6 +72,13 @@ return [
                     'index' => [
                         'format' => '/',
                         'target' => ['app\controller\Index', 'action' => 'index'],
+                    ],
+                    'admin' => [
+                        'format' => [
+                            '/admin',
+                            '/admin/:action',
+                        ],
+                        'target' => ['hikari\cms\controller\Admin', 'action' => 'index'],
                     ],
                     /*'testmodule' => [
                         'format' => [
