@@ -1,3 +1,4 @@
+
 $ ->
     $('body > footer > nav > ul').append $('<li><div>Hello from CoffeScript</div></li>')
     $('form[data-ajax]').on 'submit', (event) ->

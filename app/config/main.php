@@ -16,7 +16,22 @@ return [
                 'register' => true,
             ],
         ],
+        /*'widget' => [
+            'class' => 'hikari\component\Helper',
+            'properties' => [
+                'autoload' => [
+                    'hikari\html\*',
+                ],
+                'components' => [
+                    'html' => 'hikari\html\Html',
+                    'menu' => 'hikari\html\Menu',
+                    'grid' => 'hikari\html\Grid',
+                    'list' => 'hikari\html\List',
+                ],
+            ],
+        ],*/
         // i think this should be part of the html class? or at least autoload without having to specify it here?
+        // See component/Helper
         'menu' => [
             'class' => 'hikari\html\Menu',
             'options' => [
@@ -37,6 +52,7 @@ return [
                     'router',
                     //'translator',
                     'menu',
+                    //'widget',
                 ],
             ],
             'properties' => [
