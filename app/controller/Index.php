@@ -11,7 +11,7 @@ class Index extends \hikari\cms\controller\Index {
         $page = \hikari\cms\model\Page::one([
             'name' => $this->request->request('page', 'index'),
         ], ['hydrator' => true]);
-        $pages = \hikari\cms\model\Page::all([], ['hydrator' => true]);
+        $pages = \hikari\cms\model\Page::find([], ['hydrator' => true]);
         return ['title' => 'hello!', 'page' => $page, 'pages' => $pages];
     }
 }
