@@ -89,6 +89,13 @@ return [
                         'format' => '/',
                         'target' => ['app\controller\Index', 'action' => 'index'],
                     ],
+                    'page' => [
+                        'format' => [
+                            '/page/:action/:id',
+                            '/page/:action',
+                        ],
+                        'target' => ['hikari\cms\controller\Page', 'action' => 'index'],
+                    ],
                     'admin' => [
                         'format' => [
                             '/admin',
