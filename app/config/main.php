@@ -152,5 +152,16 @@ return [
         'action' => [
             'class' => 'hikari\controller\Action',
         ],
+        /*'script' => [
+            'class' => 'hikari\html\script',
+            'properties' => [
+                'packages' => [
+                    'jquery' => [
+                        'js' => ['//code.jquery.com/jquery-2.1.0.min.js'],
+                        'depends' => [],
+                    ],
+                ],
+            ],
+        ],*/
     ],
 ];
