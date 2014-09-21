@@ -98,10 +98,12 @@ return [
                     ],
                     'admin' => [
                         'format' => [
-                            '/admin',
+                            #'/admin/:class/:action/:type',
+                            '/admin/:class/:action',
                             '/admin/:action',
+                            '/admin',
                         ],
-                        'target' => ['hikari\cms\controller\Admin', 'action' => 'index'],
+                        'target' => ['hikari\cms\controller\:Class', 'class' => 'admin', 'action' => null],
                     ],
                     /*'testmodule' => [
                         'format' => [
