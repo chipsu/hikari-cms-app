@@ -89,21 +89,21 @@ return [
                         'format' => '/',
                         'target' => ['app\controller\Index', 'action' => 'index'],
                     ],
-                    'page' => [
+                    'post' => [
                         'format' => [
-                            '/page/:action/:id',
-                            '/page/:action',
+                            '/post/:action/:id',
+                            '/post/:action',
                         ],
-                        'target' => ['hikari\cms\controller\Page', 'action' => 'index'],
+                        'target' => ['hikari\cms\controller\Post', 'action' => 'index'],
                     ],
                     'admin' => [
                         'format' => [
-                            #'/admin/:class/:action/:type',
+                            '/admin/:class/:action/:id',
                             '/admin/:class/:action',
                             '/admin/:action',
                             '/admin',
                         ],
-                        'target' => ['hikari\cms\controller\:Class', 'class' => 'admin', 'action' => null],
+                        'target' => ['hikari\cms\controller\:Class', 'class' => 'admin', 'action' => null, 'id' => null],
                     ],
                     /*'testmodule' => [
                         'format' => [
