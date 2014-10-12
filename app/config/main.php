@@ -56,7 +56,10 @@ return [
                 ],
             ],
             'properties' => [
-                'extensions' => ['phtml'],
+                'extensions' => ['htpl', 'phtml'],
+                'compilers' => [
+                    'htpl' => '\hikari\view\compiler\Htpl2Compiler',
+                ],
                 'paths' => [
                     __DIR__ . '/..',
                     __DIR__ . '/../../lib/hikari-cms',
@@ -103,7 +106,7 @@ return [
                             '/admin/:action',
                             '/admin',
                         ],
-                        'target' => ['hikari\cms\controller\:Class', 'class' => 'admin', 'action' => null, 'id' => null],
+                        'target' => ['hikari\cms\controller\Admin', 'class' => 'admin', 'action' => null, 'id' => null],
                     ],
                     /*'testmodule' => [
                         'format' => [
