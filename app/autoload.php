@@ -1,3 +1,3 @@
 <?php
 
-\hikari\autoload\Autoload::push('../lib/hikari-cms', 'hikari/cms');
+\hikari\core\Autoload::push('../lib/hikari-cms', 'hikari/cms');
