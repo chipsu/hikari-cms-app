@@ -7,6 +7,7 @@ Core:
       ☐ Fix argument parsing
       ☐ Fix string concat (use "..")
       ☐ JavaScript li
+      ☐ Patch files?
   Stuff:
     ☐ Less agressive caching for dev (check if dependencies have been modified).
     ☐ Move generic stuff from CMS to core
@@ -16,19 +17,25 @@ CMS:
     ☐ CRUD & REST, how to deal with lists vs single items.
   Admin:
     ☐ Implement
+  Model:
+    ☐ Model & input validation
+    ☐ Validate submodels
+    ☐ Translation
   Core:
     ☐ ACL
     ☐ Auth
     ☐ Tagging (use category:tagname? tag = {category: "poo", name: "oop"})
     ☐ Categories & Hierarchy
     ☐ Dynamic model properties, class aliases & security
-    ☐ Model & input validation
     ☐ Modules & Non-post-content controllers
       Like checkout, or are they just a special kind of Content? Heck, checkout could just be an Order view. So, /checkout => /order/edit/{active-order-id}
       We still need to organize controllers though, just use lib/ in cms? Like hikari-cms/lib/klarna-checkout.
       Does (maybe) require config merging, /checkout/klarna/ => loadModule('klarna') and redirect to klarnactrl.
     ☐ Menu content class
-    ☐ Content class editor, is it a view?
+    ☐ Content controller?
+      Some view, like checkout will need parameters that depend on the Content (payment options for Order).
+      How do we get these params? Controller forward? From the Model? Or maybe a helper that's loaded into the controller and passed on to the view?
+    ☐ Content class editor, is it a view? Maybe use controller as above.
     ☐ REST OPTIONS
   API
     ☐ Stuff
