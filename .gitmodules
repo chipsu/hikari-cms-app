@@ -1,12 +1,12 @@
 [submodule "lib/hikari"]
 	path = lib/hikari
-	url = git@leafa.metrica.se:www/hikari-lib.git
+	url = https://metrica-deploy:qdngRGqTQkfRpTMfexl@bitbucket.org/metrica/hikari-lib.git
 [submodule "lib/hikari-reset"]
 	path = lib/hikari-reset
-	url = git@leafa.metrica.se:www/hikari-reset.git
+	url = https://metrica-deploy:qdngRGqTQkfRpTMfexl@bitbucket.org/metrica/hikari-reset.git
 [submodule "lib/hikari-js"]
 	path = lib/hikari-js
-	url = git@bitbucket.org:metrica/hikari-js.git
+	url = https://metrica-deploy:qdngRGqTQkfRpTMfexl@bitbucket.org/metrica/hikari-js.git
 [submodule "lib/hikari-cms"]
 	path = lib/hikari-cms
-	url = git@leafa.metrica.se:www/hikari-cms.git
+	url = https://metrica-deploy:qdngRGqTQkfRpTMfexl@bitbucket.org/metrica/hikari-cms.git
