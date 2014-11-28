@@ -1,4 +1,9 @@
 Core:
+  Error handling:
+    ☐ Output appropriate format (json, xml or html)
+    ☐ Logging and all that
+  Controllers:
+    ☐ Rest should honor accept header
   Views:
     ☐ Code cleanup
       ☐ Fix namespaces
@@ -8,19 +13,32 @@ Core:
       ☐ Fix string concat (use "..")
       ☐ JavaScript li
       ☐ Patch files?
+  Forms:
+    ☐ FormBuilder
+    ☐ FormModels?
   Stuff:
     ☐ Less agressive caching for dev (check if dependencies have been modified).
-    ☐ Move generic stuff from CMS to core
+    ☐ Move generic stuff from CMS to core (models, validation)
+    ☐ Move Mongo stuff to own ns
 CMS:
   Stuff:
     ☐ Figure out how we should implement the inline editing and everything...
     ☐ CRUD & REST, how to deal with lists vs single items.
+  Things:
+    ☐ Inline-editor using hui-data & hui-data-view
+      ☐ check what kind of object hui-data is (list or single entity) how? if self.has(hui-data-id) then single else list (assuming > * has data-id)
+      ☐ for admins: display editor: add & edit items
+      ☐ for all: allow refresh of item
+    ☐ How do we set hui-data route?
+    ☐ Frontend Rest client
   Admin:
     ☐ Implement
+      This is just a hui frontend using the same rest api as the rest of the app, sharing most views.
   Model:
+    ☐ Index & ensureIndex
     ☐ Model & input validation
-    ☐ Validate submodels
     ☐ Translation
+    ☐ Submodels & Attributes, one base interface?
   Core:
     ☐ ACL
     ☐ Auth
@@ -39,3 +57,12 @@ CMS:
     ☐ REST OPTIONS
   API
     ☐ Stuff
+    ☐ Console (curl wrapper using the REST API?)
+        Example: $ console init mysite.example.com/api
+                         # auth if needed
+                         $ console post product [data]
+                         # if no data: attempts to fetch schema for product
+                         #                   promts the user for input, example
+                         $ name: Type name here
+                         $ article_number: ...
+                         # special key to submit instantly
