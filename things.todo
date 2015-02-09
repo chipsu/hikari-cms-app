@@ -1,11 +1,29 @@
-Core:
+Library:
+  General:
+    ☐ Remove traits, use mixins.
+    ☐ Use getProp, setProp, __get, __set for Components.
+    ☐ Less agressive caching for dev (check if dependencies have been modified).
   Error handling:
     ☐ Output appropriate format (json, xml or html)
     ☐ Logging and all that
-  Controllers:
-    ☐ Rest should honor accept header
+  Core:
+    ☐ Component
+      ☐ Mixins (behaviours)
+    ☐ Request
+      ☐ Content parser
+      ☐ Headers
+      ☐ HTTP-method override from post-param (so forms can use same controller as the REST-API)
+        Not so sure about this, return to referer? What about API-keys? Generic HTTP-header override? _method=post&_returl=referer&_token=apikey
+        Make it an option if implemented. Request::$httpPostHeaders = []
+  Controller:
+    ☐ Actions & $context & Reflection
+    ☐ Rest
+      ☐ Honor accept header
+      ☐ Method filter
+      ☐ Map to REST calls to index, create, read, update, delete
   Views:
     ☐ Code cleanup
+      ☐ View as filter()
       ☐ Fix namespaces
       ☐ Remove old code
     ☐ HTPL
@@ -16,14 +34,14 @@ Core:
   Forms:
     ☐ FormBuilder
     ☐ FormModels?
-  Stuff:
-    ☐ Less agressive caching for dev (check if dependencies have been modified).
-    ☐ Move generic stuff from CMS to core (models, validation)
+  Models:
     ☐ Move Mongo stuff to own ns
+    ☐ Move generic stuff from CMS to core (models, validation)
+  Routing:
+    ☐ URLRule http method & headers
 CMS:
   Stuff:
     ☐ Figure out how we should implement the inline editing and everything...
-    ☐ CRUD & REST, how to deal with lists vs single items.
   Things:
     ☐ Inline-editor using hui-data & hui-data-view
       ☐ check what kind of object hui-data is (list or single entity) how? if self.has(hui-data-id) then single else list (assuming > * has data-id)

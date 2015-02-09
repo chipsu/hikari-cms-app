@@ -2,5 +2,5 @@
 
 namespace app\application;
 
-class Application extends \hikari\application\Application {
+class Application extends \hikari\core\Application {
 }
