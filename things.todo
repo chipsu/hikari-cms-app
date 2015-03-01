@@ -1,16 +1,17 @@
 Library:
   General:
     ☐ Remove traits, use mixins.
-    ☐ Use getProp, setProp, __get, __set for Components.
+    ✔ Use getProp, setProp, __get, __set for Components. @done (15-03-01 21:26)
     ☐ Less agressive caching for dev (check if dependencies have been modified).
+    ☐ Organize namespace and class names (classes, actions & filters)
   Error handling:
     ☐ Output appropriate format (json, xml or html)
     ☐ Logging and all that
   Core:
     ☐ Component
-      ☐ Mixins (behaviours)
+      ✔ Mixins (behaviours) @done (15-03-01 21:26)
     ☐ Request
-      ☐ Content parser
+      ✔ Content parser @done (15-03-01 21:26)
       ☐ Headers
       ☐ HTTP-method override from post-param (so forms can use same controller as the REST-API)
         Not so sure about this, return to referer? What about API-keys? Generic HTTP-header override? _method=post&_returl=referer&_token=apikey
@@ -23,7 +24,7 @@ Library:
       ☐ Map to REST calls to index, create, read, update, delete
   Views:
     ☐ Code cleanup
-      ☐ View as filter()
+      ✔ View as filter() @done (15-03-01 21:28)
       ☐ Fix namespaces
       ☐ Remove old code
     ☐ HTPL
@@ -37,6 +38,7 @@ Library:
   Models:
     ☐ Move Mongo stuff to own ns
     ☐ Move generic stuff from CMS to core (models, validation)
+    ☐ Use new Component interface for Models & Attributes.
   Routing:
     ☐ URLRule http method & headers
 CMS:
