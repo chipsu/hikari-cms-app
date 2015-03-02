@@ -4,6 +4,7 @@ Library:
     ✔ Use getProp, setProp, __get, __set for Components. @done (15-03-01 21:26)
     ☐ Less agressive caching for dev (check if dependencies have been modified).
     ☐ Organize namespace and class names (classes, actions & filters)
+    ☐ Component contexts vs App!?
   Error handling:
     ☐ Output appropriate format (json, xml or html)
     ☐ Logging and all that
