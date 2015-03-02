@@ -87,3 +87,6 @@ CMS:
                          $ name: Type name here
                          $ article_number: ...
                          # special key to submit instantly
+  Future:
+    ☐ Automagic binding of action parameters, like so:
+      function someAction($a, $b, RouterInterface $router)
