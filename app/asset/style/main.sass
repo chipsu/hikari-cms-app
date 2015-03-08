@@ -7,6 +7,8 @@
 @import 'font.sass'
 @import '../../../lib/hikari-reset/awesome/scss/font-awesome.scss'
 
+@import url(http://fonts.googleapis.com/css?family=Lobster)
+
 div.container
     @include outer-container
     div.parent
@@ -26,6 +28,10 @@ div.container
         &.span-8
             @include span-columns(8)
             @include omega()
+
+// Fix icon alignment (not sure about this, reset sets baseline)
+.fa
+    vertical-align: top
 
 body
     color: $primaryColor

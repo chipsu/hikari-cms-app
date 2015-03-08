@@ -88,6 +88,22 @@ return [
                     ],
                     'target' => ['hikari\cms\controller\Post', 'action' => 'index'],
                 ],
+                'rest' => [
+                    'format' => [
+                        ['path' => '/rest/:class/:id'],
+                        ['path' => '/rest/:class'],
+                    ],
+                    'target' => ['hikari\cms\controller\:Class', 'class' => 'post'],
+                    'method' => ['head', 'options', 'get', 'put', 'post', 'patch', 'delete'],
+                ],
+                'post2' => [
+                    'format' => [
+                        ['path' => '/post2/:class/:id/:action'],
+                        ['path' => '/post2/:class/:id'],
+                        ['path' => '/post2/:class'],
+                    ],
+                    'target' => ['hikari\cms\controller\:Class', 'controller' => 'post', 'action' => 'index'],
+                ],
                 'admin' => [
                     'format' => [
                         '/admin/:class/:action/:id',
