@@ -63,5 +63,9 @@ $ ->
         html = fn '$title': "<u>Coffeh!</u>"
         $('#output').html html
     $('#compile').click()
-    $(window).on 'hui-touchmenu-init', (event, menu) ->
+    $(document).on 'hui-touchmenu-init', (event, menu) ->
         menu.element.removeClass 'horizontal'
+
+    $(document).on 'click', '[href="#toggle-admin"]', (event) ->
+        $('html').toggleClass('admin')
+        return false

@@ -102,7 +102,7 @@ return [
                         ['path' => '/post2/:class/:id'],
                         ['path' => '/post2/:class'],
                     ],
-                    'target' => ['hikari\cms\controller\:Class', 'controller' => 'post', 'action' => 'index'],
+                    'target' => ['hikari\cms\controller\:Class', 'class' => 'post', 'action' => 'index'],
                 ],
                 'admin' => [
                     'format' => [
@@ -111,7 +111,7 @@ return [
                         '/admin/:action',
                         '/admin',
                     ],
-                    'target' => ['hikari\cms\controller\Admin', 'class' => 'admin', 'action' => null, 'id' => null],
+                    'target' => ['hikari\cms\controller\Admin', 'class' => 'admin', 'action' => 'index', 'id' => null],
                 ],
                 /*'testmodule' => [
                     'format' => [
