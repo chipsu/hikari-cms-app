@@ -56,8 +56,10 @@ return [
                 'htpl' => '\hikari\view\compiler\Htpl2Compiler',
             ],
             'paths' => [
-                __DIR__ . '/..',
-                __DIR__ . '/../../lib/hikari-cms',
+                '@app/themes/@role',
+                '@lib/hikari-cms/themes/@role',
+                '@app',
+                '@lib/hikari-cms',
             ],
         ],
         'asset' => [
@@ -72,6 +74,38 @@ return [
             'components' => [
                 'cache',
             ],
+            /*
+            'controllerMap' => [
+                'post' => 'hikari\cms\controller\Post',
+                '*' => 'hikari\cms\controller\:class',
+            ],
+            */
+            /**
+             * Route v2
+             */
+            'routes' => [
+                'api' => [
+                    '@get' => ['/:controller/:id', 'id' => null],
+                    '@get,@post' => ['/:controller/:id/:method', 'id' => null, 'method' => null],
+                    '@rest' => ['/:controller/:id', 'id' => null],
+                    'controllerMap' => [
+                        '*' => 'app/controller/:class',
+                    ],
+                ],
+                'api' => [
+                    'match' => [
+                        '@rest/:controller/:id',
+                        '@get/:controller/:id/:action',
+                        '@get/:controller/:id',
+                        '@get/:controller',
+                        ['method' => '@get', 'format' => '/:controller'],
+                        '@get' => '/:controller',
+                    ],
+                    'target' => ['controller' => 'post', 'id' => null, 'action' => ':method'],
+                    'get' => ['target...'],
+                    'post,put' => ['target...'],
+                ],
+            ],
             /**
              * All routes are grouped into a named category, this name is used when an URI is built.
              * Names do not affect how routes are processed (first to last).
@@ -83,10 +117,19 @@ return [
                 ],
                 'post' => [
                     'format' => [
-                        '/post/:action/:id',
-                        '/post/:action',
+                        '/post/:id/:action',
+                        '/post/:id',
+                        '/post',
                     ],
-                    'target' => ['hikari\cms\controller\Post', 'action' => 'index'],
+                    'target' => ['hikari\cms\controller\Post', 'id' => null, 'action' => 'read'],
+                ],
+                'post_read' => [
+                    'format' => ['/post/:id'],
+                    'target' => ['hikari\cms\controller\Post', 'action' => 'read'],
+                ],
+                'post_remove' => [
+                    'format' => ['/post/:id/remove'],
+                    'target' => ['hikari\cms\controller\Post', 'action' => 'read'],
                 ],
                 'rest' => [
                     'format' => [

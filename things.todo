@@ -5,6 +5,8 @@ Library:
     ☐ Less agressive caching for dev (check if dependencies have been modified).
     ☐ Organize namespace and class names (classes, actions & filters)
     ☐ Component contexts vs App!?
+    ☐ dev.?.com -> grid with stuff using the cms
+    ☐ demo.?.com -> demo cms
   Error handling:
     ☐ Output appropriate format (json, xml or html)
     ☐ Logging and all that
@@ -40,8 +42,12 @@ Library:
     ☐ Move Mongo stuff to own ns
     ☐ Move generic stuff from CMS to core (models, validation)
     ☐ Use new Component interface for Models & Attributes.
+    ☐ DataProvider interface (Feeds 2.0)
   Routing:
     ☐ URLRule http method & headers
+  Helpers/Widgets:
+    ☐ HTML
+      ☐ ActiveMenu using DataProvider
 CMS:
   Admin:
     The admin interface uses the same controller as the client but different views
@@ -58,6 +64,7 @@ CMS:
   Base views & styling:
     ☐ Sane HTML structure and easy to override with app-css
       ☐ Avoid > in core CSS, use ID or unique class
+      ☐ Reset: Little nesting, few variables & modifiers
   Model:
     ☐ Index & ensureIndex
     ☐ Model & input validation

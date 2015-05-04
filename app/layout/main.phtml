@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <nav class="horizontal" id="mainmenu" data-hui-touchmenu-id="touchmenu">
+        <nav class="hui-menu horizontal" id="mainmenu">
             <ul>
                 <li><a href="<?=$this->url('index')?>">Home</a></li>
                 <li><a href="<?=$this->url(null, ['class' => 'index', 'action' => 'index'])?>">Index</a></li>
@@ -24,17 +24,17 @@
                 <li><a href="<?=$this->url(null, ['class' => 'index', 'action' => 'args', 'a' => 1, 'b' => 2, 'c' => 3])?>">Args</a></li>
             </ul>
         </nav>
-        <nav class="horizontal mobile">
+        <nav class="horizontal mobile tablet">
             <ul>
-                <li><a href="#" data-hui-touchmenu="#mainmenu"><i class="fa fa-fw fa-ellipsis-v"></i></a></li>
+                <li><a href="#" hui-toggle-class='{"head":["mainmenu-open", "mainmenu-closed"]}' hui-toggle-menu='#mainmenu'><i class="fa fa-fw fa-ellipsis-v"></i></a></li>
                 <li><a href="<?=$this->url('index')?>">Demo</a></li>
                 <li><a href="#"><i class="fa fa-fw fa-heart loading-indicator"></i></a></li>
             </ul>
         </nav>
     </header>
-    <div role="main">
+    <main role="main">
         <?=$this->content?>
-    </div>
+    </main>
     <footer>
         <nav class="horizontal">
             <ul>
@@ -44,37 +44,35 @@
         </nav>
     </footer>
     <a id="admin-button" href="#toggle-admin"><i class="fa fa-fw fa-cogs"></i></a>
-    <nav id="admin-menu">
-        <?php
-        $menu = [
-            [ 'title' => 'Close', 'icon' => 'fa-fw fa-times', 'link' => '#toggle-admin', ],
-            [ 'title' => 'Dashboard', 'icon' => 'fa-fw fa-icon', 'route' => ['admin', []], ],
-            [ 'title' => 'Notes', 'icon' => 'fa-fw fa-icon', 'route' => ['user', ['action' => 'notes']], ],
-            [ 'title' => 'Posts', 'icon' => 'fa-fw fa-icon', 'route' => ['post'], ],
-            [ 'title' => 'Pages', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'page']], ],
-            [ 'title' => 'Media', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'media']], ],
-            [
-                'title' => 'Webshop', 'icon' => 'fa-fw fa-icon', 'link' => '#webshop',
-                'items' => [
-                    [ 'title' => 'Products', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'product']], ],
-                    [ 'title' => 'Orders', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'order']], ],
-                ],
+    <?php
+    $menu = [
+        [ 'title' => 'Close', 'icon' => 'fa-fw fa-times', 'link' => '#toggle-admin', ],
+        [ 'title' => 'Dashboard', 'icon' => 'fa-fw fa-icon', 'route' => ['admin', []], ],
+        [ 'title' => 'Notes', 'icon' => 'fa-fw fa-icon', 'route' => ['user', ['action' => 'notes']], ],
+        [ 'title' => 'Posts', 'icon' => 'fa-fw fa-icon', 'route' => ['post'], ],
+        [ 'title' => 'Pages', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'page']], ],
+        [ 'title' => 'Media', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'media']], ],
+        [
+            'title' => 'Webshop', 'icon' => 'fa-fw fa-icon', 'link' => '#webshop',
+            'items' => [
+                [ 'title' => 'Products', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'product']], ],
+                [ 'title' => 'Orders', 'icon' => 'fa-fw fa-icon', 'route' => ['post', ['type' => 'order']], ],
             ],
-            [
-                'title' => 'Accounts', 'icon' => 'fa-fw fa-icon', 'link' => '#accounts',
-                'items' => [
-                    [ 'title' => 'Groups', 'icon' => 'fa-fw fa-icon', 'route' => ['user', []], ],
-                    [ 'title' => 'Users', 'icon' => 'fa-fw fa-icon', 'route' => ['group', []], ],
-                ],
+        ],
+        [
+            'title' => 'Accounts', 'icon' => 'fa-fw fa-icon', 'link' => '#accounts',
+            'items' => [
+                [ 'title' => 'Groups', 'icon' => 'fa-fw fa-icon', 'route' => ['user', []], ],
+                [ 'title' => 'Users', 'icon' => 'fa-fw fa-icon', 'route' => ['group', []], ],
             ],
-            [ 'title' => 'Account', 'icon' => 'fa-fw fa-icon', 'route' => ['user', ['action' => 'account']], ],
-            [ 'title' => 'System', 'icon' => 'fa-fw fa-cogs', 'route' => ['admin', ['action' => 'system']], ],
-            [ 'title' => 'Logout', 'icon' => 'fa-fw fa-sign-out', 'route' => ['user', ['action' => 'logout']], ],
-            [ 'title' => 'Help', 'icon' => 'fa-fw fa-help', 'route' => ['admin', ['action' => 'help']], ],
-        ];
-        ?>
-        <?php echo $this->controller->getComponent('menu')->render($this, $menu, ['nav' => ['id' => 'admin-menu', 'class' => 'menu vertical', 'data-hui-touchmenu-id' => 'touchmenu'], 'ul']); ?>
-    </nav>
+        ],
+        [ 'title' => 'Account', 'icon' => 'fa-fw fa-icon', 'route' => ['user', ['action' => 'account']], ],
+        [ 'title' => 'System', 'icon' => 'fa-fw fa-cogs', 'route' => ['admin', ['action' => 'system']], ],
+        [ 'title' => 'Logout', 'icon' => 'fa-fw fa-sign-out', 'route' => ['user', ['action' => 'logout']], ],
+        [ 'title' => 'Help', 'icon' => 'fa-fw fa-help', 'route' => ['admin', ['action' => 'help']], ],
+    ];
+    ?>
+    <?php echo $this->controller->getComponent('menu')->render($this, $menu, ['nav' => ['id' => 'admin-menu', 'class' => 'menu vertical push'], 'ul']); ?>
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="<?=$this->asset->url('script/main.json')?>" async></script>
 </body>
