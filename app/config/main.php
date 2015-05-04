@@ -71,28 +71,27 @@ return [
         'router' => [
             'class' => 'hikari\router\Router',
             'shared' => true,
+            'cachePrefix' => null,
             'components' => [
                 'cache',
             ],
-            /*
             'controllerMap' => [
                 'post' => 'hikari\cms\controller\Post',
                 '*' => 'hikari\cms\controller\:class',
             ],
-            */
             /**
              * Route v2
              */
-            'routes' => [
+            'groups' => [
                 'api' => [
                     '@get' => ['/:controller/:id', 'id' => null],
                     '@get,@post' => ['/:controller/:id/:method', 'id' => null, 'method' => null],
                     '@rest' => ['/:controller/:id', 'id' => null],
                     'controllerMap' => [
-                        '*' => 'app/controller/:class',
+                        '*' => ['app/controller/:Controller', ':method'],
                     ],
                 ],
-                'api' => [
+                /*'api' => [
                     'match' => [
                         '@rest/:controller/:id',
                         '@get/:controller/:id/:action',
@@ -104,13 +103,13 @@ return [
                     'target' => ['controller' => 'post', 'id' => null, 'action' => ':method'],
                     'get' => ['target...'],
                     'post,put' => ['target...'],
-                ],
+                ],*/
             ],
             /**
              * All routes are grouped into a named category, this name is used when an URI is built.
              * Names do not affect how routes are processed (first to last).
              */
-            'routes' => [
+            'routes_OLD' => [
                 'index' => [
                     'format' => '/',
                     'target' => ['app\controller\Index', 'action' => 'index'],
