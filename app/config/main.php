@@ -85,8 +85,8 @@ return [
             'groups' => [
                 'api' => [
                     ['/:controller/:id', 'head,get', ['id' => null]],
-                    ['/:controller/:id/:method', 'head,get,post', 'id' => null, 'method' => null],
-                    ['/:controller/:id', '@rest', 'id' => null],
+                    ['/:controller/:id/:method', 'head,get,post', ['id' => null, 'method' => null]],
+                    ['/:controller/:id', '@rest', ['id' => null]],
                     'controllerMap' => [
                         '*' => ['app/controller/:Controller', ':method'],
                     ],

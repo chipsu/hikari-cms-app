@@ -1,3 +1,10 @@
+Next:
+  1. Controllers & (REST) API
+  2. Modules + Widgets & API
+  3. Restructure library
+  4. Rethink asset handling & building
+  5. Composer
+  6. Grid-admin 2.0
 Library:
   General:
     ☐ Remove traits, use mixins.
@@ -31,6 +38,7 @@ Library:
       ☐ Fix namespaces
       ☐ Remove old code
     ☐ HTPL
+      ☐ Should we really use this? Or maybe Twig?
       ☐ Fix argument parsing
       ☐ Fix string concat (use "..")
       ☐ JavaScript li
@@ -44,11 +52,47 @@ Library:
     ☐ Use new Component interface for Models & Attributes.
     ☐ DataProvider interface (Feeds 2.0)
   Routing:
-    ☐ URLRule http method & headers
+    ✔ URLRule http method & headers @done (15-06-30 21:46)
   Helpers/Widgets:
     ☐ HTML
       ☐ ActiveMenu using DataProvider
 CMS:
+  2.0:
+    Nodes:
+      ☐ Everything is a node
+      ☐ A node can set a template that's used for list (set of resources) and read (single resource) actions, ie. Products and View product.
+      ☐ Templates are inherited from parent nodes, they can be extended or replaced by child nodes.
+    Templates:
+      ☐ Grid layout containers
+      ☐ Responsive
+      ☐ Each area can be hidden or visible with media queries
+      ☐ Templates always extend a root template (html code)
+        node:
+           name: "asdf"
+           template: "default"
+        child_node:
+           name: "asdf/child"
+           parent: ref(some_id)
+           template: null
+      ☐ Templates define widget areas (sidebar, top, content)
+        default:
+          top: [$logo, $cart]
+          content: [$mainContent]
+          bottom: [$footer]
+        product-list:
+          @extends default
+          content: [$sidebar, $mainContent]
+        product:
+          @extends default
+          content: [$mainContent, $relatedProducts, $addToWishlist]
+    Widgets:
+      ☐ Placed in a widget area for a template
+      ☐ Responsive
+      ☐ ListWidget: Lists all children or related resources (product list) - Properties: cols(mobile,tablet), pageSize etc
+      ☐ CartWidget: Displays a shopping cart
+    Design tool:
+      ☐ Admins can use the grid tool to build layouts, we need a SASS & JS-editor (+maybe HTPL/HTML-template editor) so we can do everything in the browser.
+      ☐ Integrate with browser-sync
   Admin:
     The admin interface uses the same controller as the client but different views
     ☐ Default views for all resources
@@ -63,7 +107,7 @@ CMS:
     ☐ How do we set hui-data route?
   Base views & styling:
     ☐ Sane HTML structure and easy to override with app-css
-      ☐ Avoid > in core CSS, use ID or unique class
+      ☐ BEM (with class modifiers?)
       ☐ Reset: Little nesting, few variables & modifiers
   Model:
     ☐ Index & ensureIndex
