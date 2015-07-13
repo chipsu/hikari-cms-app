@@ -10,7 +10,14 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "http://satis.metrica.se"
+      "url": "http://satis.metrica.se",
+      "options":  {
+        "http": {
+          "header": [
+            "X-API-TOKEN: dCZAhJtyuATYfVIhXuY"
+          ]
+        }
+      }
     }
   ]
 }
