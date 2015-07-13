@@ -2,7 +2,7 @@
   "name": "metrica/hikari-cms-app",
   "require": {
     "php": "^5.5.9",
-    "metrica/hikari-cms": "1.0.*"
+    "metrica/hikari-cms-core": "1.0.*"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"

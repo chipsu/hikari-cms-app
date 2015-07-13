@@ -144,3 +144,18 @@ CMS:
   Future:
     ☐ Automagic binding of action parameters, like so:
       function someAction($a, $b, RouterInterface $router)
+Deployment:
+  capistranorb.com ?
+  rsync + git & composer ?
+  nodepl ?
+    nodepl deploy www [--prepare] [--rollback]
+     -> look for nodepl-deploy.config
+     -> pre install
+     -> make clean install in local-release/$hash
+          cd /tmp && git clone && composer install dev
+     -> rsync to remotes [--prepare ends here]
+     -> remote pre install (sync assets, database etc.)
+     -> sync remotes
+     -> activate new version on remotes (synced if remotes.length > 1))
+     -> remote post install
+     -> post install
