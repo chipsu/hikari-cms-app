@@ -1,8 +1,8 @@
 <?php
 
-require(__DIR__ . '/../lib/hikari/autoload.php');
+require(__DIR__ . '/../vendor/autoload.php');
 
-\hikari\core\Bootstrap::run([
-	'path' => __DIR__ . '/../app',
-	'publicPath' => __DIR__,
+hikari\core\Bootstrap::run([
+    'path' => __DIR__ . '/../app',
+    'publicPath' => __DIR__,
 ]);

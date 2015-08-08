@@ -7,6 +7,12 @@
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
   },
+  "autoload": {
+    "psr-4": {
+      "app\\": "./app",
+      "hikari\\cms\\": "./vendor/metrica/hikari-cms-core"
+    }
+  },
   "repositories": [
     {
       "type": "composer",

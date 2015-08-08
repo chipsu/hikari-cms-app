@@ -75,9 +75,15 @@ return [
             'components' => [
                 'cache',
             ],
-            'controllerMap' => [
-                'post' => 'hikari\cms\controller\Post',
-                '*' => 'hikari\cms\controller\:class',
+            'paramMap' => [
+                'controller' => [
+                    'post' => 'hikari\cms\controller\:Controller',
+                    '*' => 'hikari\cms\controller\:Controller',
+                ],
+            ],
+            'defaultParams' => [
+                'controller' => 'index',
+                'action' => 'index',
             ],
             /**
              * Route v2
@@ -87,9 +93,17 @@ return [
                     ['/:controller/:id', 'head,get', ['id' => null]],
                     ['/:controller/:id/:method', 'head,get,post', ['id' => null, 'method' => null]],
                     ['/:controller/:id', '@rest', ['id' => null]],
-                    'controllerMap' => [
-                        '*' => ['app/controller/:Controller', ':method'],
+                    'paramMap' => [
+                        'controller' => [
+                            '*' => '\app\controller\:Controller',
+                        ],
+                        'action' => [
+                            '*' =>  ':method',
+                        ],
                     ],
+                ],
+                'home' => [
+                    ['/', 'head,get', []],
                 ],
                 /*'api' => [
                     'match' => [

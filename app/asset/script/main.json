@@ -1,9 +1,0 @@
-{
-    "mode": "chain",
-    "output": "coffee",
-    "files": [
-        "*.coffee",
-        "../../../lib/hikari-js/core/component.coffee",
-        "../../../lib/hikari-js/ui/*.coffee"
-    ]
-}

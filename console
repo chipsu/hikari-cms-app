@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# todo: replace with command-controller
+
+trap 'kill $(jobs -p)' EXIT
+
+case "$1" in
+    setup)
+        sudo npm install -g browser-sync
+        ;;
+    watch)
+        php -S 0.0.0.0:8000 -t public &
+        browser-sync start \
+            --proxy="localhost:8000" \
+            --files="**/*.php,**/.css,**/.js"
+        ;;
+    *)
+        echo "$0 <cmd>"
+        exit 1
+        ;;
+esac
