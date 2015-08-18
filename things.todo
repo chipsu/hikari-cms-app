@@ -1,5 +1,13 @@
 Next:
   1. Controllers & (REST) API
+    opt1 = CrudCtrl, extends RestCtrl, adds create View render & http redirect
+    opt2 = DataCtrl, extends RestCtrl in CMS, adds Ajax-actions to render CRUD views, form submitted with ajax.
+    Example flow:
+      index() renders page
+      user clicks edit, ajax: /resource/id/render?view=edit (response in TWIG or HTML)
+      user clicks save, rest put: /resource/id -> ajax: /resource/id/render?view=item -> rest get: /resource/id, render & replace resource
+      new: render?view=edit, rest post, ajax: render?view=index, rest get /resource/parentId, render & update
+    opt3 = Combination of 1 & 2, with POST fallback
   2. Modules + Widgets & API
   3. Restructure library
   4. Rethink asset handling & building

@@ -90,15 +90,16 @@ return [
              */
             'groups' => [
                 'api' => [
-                    ['/:controller/:id', 'head,get', ['id' => null]],
-                    ['/:controller/:id/:method', 'head,get,post', ['id' => null, 'method' => null]],
-                    ['/:controller/:id', '@rest', ['id' => null]],
+                    ['/api/:controller/:id', 'head,get', ['id' => null]],
+                    ['/api/:controller/:id/:http_method', 'head,get,post', ['id' => null, 'http_method' => null]],
+                    ['/api/:controller/:id', '@rest', ['id' => null]],
+                    ['/api/:controller', 'head,get,post', []],
                     'paramMap' => [
                         'controller' => [
-                            '*' => '\app\controller\:Controller',
+                            '*' => '\app\controller\api\:Controller',
                         ],
                         'action' => [
-                            '*' =>  ':method',
+                            '*' =>  ':http_method',
                         ],
                     ],
                 ],
